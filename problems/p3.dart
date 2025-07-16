@@ -32,7 +32,7 @@ String processPayment(dynamic payment, String currency) {
           : "Unknown payment method";
 }
 void main() {
-  print(processPayment(CardPayment(100, "1234-5678-9876-5432"), "EGP")); 
+  print(processPayment(CardPayment(100, "1234-5678-9876-5432"), "EGP")); // Card payment of 3000.0 EGP...
   print(processPayment(CashPayment(50), "USD")); 
-  print(processPayment("PayPal", "USD")); 
+  print(processPayment("PayPal", "USD")); // Unknown payment method
 }
