@@ -55,7 +55,48 @@ When displayInfo() is called on a User, Dart will run the correct version depend
 
  static int totalUsers = 0; in my code mean that every patint or doctor are add to my system
 
+7- 
+void book(String pid, String did, String time) {
+  var p = patients.firstWhere((i) => i.id == pid);
+  var d = doctors.firstWhere((i) => i.id == did);
+  appointments.add(Appointment(p, d, time));
+  print(" Appointment booked.");
+}
 
+this class
+pid: the patient’s ID
+
+did: the doctor’s ID
+
+time: the appointment time
+
+Finds the Patient object with that ID.
+
+Finds the Doctor object with that ID.
+
+Creates a new Appointment with those objects and the time.
+
+Adds the appointment to the list.
+
+8- Why Use firstWhere() Instead of where()?////////////////////
+ firstWhere():
+Returns only the first element that matches the condition.
+
+Returns a single object (not a list).
+
+Used when you expect only one match.
+//ex...
+var p = patients.firstWhere((i) => i.id == pid);
+Returns one Patient object with a matching id.
+///
+ where():
+Returns all list of  elements that match the condition.
+
+Returns an Iterable/List (even if only one element matches).
+//ex...
+var results = patients.where((i) => i.id == pid);
+// results is Iterable<Patient>
+finally You expect only one match, not multiple so we use firstWhere((i) not .where((i);
 
  and finally this a sample output of my code ....
  
